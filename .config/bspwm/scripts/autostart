@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function run {
     if ! pgrep $1 ;
@@ -11,4 +11,6 @@ function run {
 run sxhkd -c /home/juanc/.config/bspwm/sxhkd/sxhkdrc &
 
 # wallpaper
-run variety &
+run /home/juanc/.config/bspwm/scripts/setwallpaper -r
+
+run picom --config $HOME/.config/bspwm/picom.conf &

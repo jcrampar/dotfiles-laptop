@@ -7,7 +7,7 @@ super + F1
 	redshift -m randr -P -O 4300
 
 super + shift + F1
-    redshift -x
+	redshift -x
 
 
 
@@ -33,7 +33,7 @@ super + Delete
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # active windows selector
 super + w
@@ -141,7 +141,8 @@ ctrl + alt + o
     ~/.config/bspwm/scripts/picom-toggle.sh
 
 
-
+ctrl + alt + b
+	/home/juanc/.local/bin/batterynotify 
 
 
 
@@ -156,9 +157,12 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 #kill
-super + q
+super + x
 	bspc node -c
 
+# change the desktop layout
+super + space
+    bspc desktop -l next
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -199,6 +203,12 @@ super + ctrl + {m,x,y,z}
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
+
+
+
+# Change focused window in monocle mode
+super + {Down,Up}}
+    bspc node --{focus} {next,prev}.local.window.!hidden
 
 # focus the node for the given path jump
 super + {p,b,comma,period}

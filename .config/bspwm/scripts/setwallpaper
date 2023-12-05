@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+case $1 in
+
+u)
+    # update file list
+    feh -U --recursive /home/juanc/Pictures/wallpapers > /home/juanc/.cache/fehimages.txt
+    ;;
+-r) 
+    # set ramdon wall
+    feh --recursive --bg-fill --randomize -f /home/juanc/.cache/fehimages.txt
+    ;;
+
+esac
